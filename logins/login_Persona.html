@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro Persona</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles/styles_login.css">
+</head>
+
+<body style="background: radial-gradient(#fff,#46A2FD );">
+
+    <main>
+        <div class="contenedor__todo">
+
+            <div class="caja__trasera" style="border-radius: 25px;">
+                <div class="caja__trasera-login">
+                    <h3>¿Ya tienes una cuenta?</h3>
+                    <p>Inicia sesión para entrar a la página</p>
+                    <button id="btn__iniciar-sesion">Iniciar sesión</button>
+                </div>
+                <div class="caja__trasera-register">
+                    <h3>¿Aún no tienes una cuenta?</h3>
+                    <p><a href="../sign_up/registro_Persona.html" style="text-decoration:underline">Registrate  </a>para que puedas iniciar sesión</p>
+                    <button id="btn__cancel"><a href="../index.html">Cancelar<a></button>
+                </div>
+            </div>
+            <!-- Formulario de login y registro-->
+            <div class="contenedor__login-register" style="text-align: center; margin-left: -10px; margin-top: 20px;">
+                <!--Login_Persona-->
+                <form action="/login" class="formulario__login">
+                    <img src="../images/logo.jpg" style=" margin-top: -35px;">
+                    <!--Login_Persona-->
+                    <form action="" class="formulario__login">
+                        <h2 style="margin-top: 10px;">Iniciar sesión</h2>
+                        <h6>Bienvenido =)</h6>
+                        <input type="email" placeholder="Correo electronico" style="text-align: center;" required>
+                        <input type="password" placeholder="Contraseña" style="text-align: center;" required>
+                        <button id="inicio_sesion"><a href="../menus/menu_login.html">Iniciar sesión<a></button>
+                    </form>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <style>
+        #btn_log {
+            width: 100px;
+            align-items: center;
+            text-align: center;
+            background-color: rgba(0, 0, 0, 0);
+        }
+        
+        #btn_log i {
+            margin-left: -13px;
+        }
+    </style>
+
+    <script src="../js/script.js"></script>
+
+</body>
+
+</html>
