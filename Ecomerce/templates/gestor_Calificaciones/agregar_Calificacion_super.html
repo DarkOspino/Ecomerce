@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Productos</title>
+    <script src="../../static/js/script.js"></script>
+    <!-- BOOTSTRAP 4 -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.3.1/lux/bootstrap.min.css">
+    <!-- FONTS -->
+    <link href="https://fonts.googleapis.com/css?family=Lobster&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../static/styles/style_index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="header">
+        <!-- menu -->
+        <div class="container">
+            <div class="navbar">
+                <div class="logo">
+                    <img src="../../static/docs/logo.png" width="250px">
+                </div id="desplegable">
+                <nav>
+                    <ul>
+                        <ul id="menu">
+                            <li><a href="/menusuper">Menu</a></li>
+                            <li><a href="/productssuper">Explorar</a></li>
+                            <li><a href="/lista_personas">Administrar Usuarios</a></li>
+                            <li><a href="/lista_productos">Administrar Productos</a></li>
+                            <li><a href="/logout">Cerrar Sesion</a></li>
+                            <li><a href="/contactssuper">Contactos</a></li>
+                            <li><a href="/preguntassuper">Preguntas Frecuentes</a></li>
+                        </ul>
+                    </ul>
+                </nav>
+                <a href="https://mail.google.com/mail/u/0/"><img src="../../static/docs/cart.png" width="50px" height="50px"></a>
+            </div>
+        </div>
+        <!-- fin menu  -->
+
+        <!-- inicio categoria -->
+        <!-- fin categoria -->
+        <!-- descricion productos  -->
+        <!-- boton -->
+        <div class="buscar">
+            <input type="text" placeholder="Buscar">
+            <div class="boton">
+                <i class="fas fa-search"></i>
+            </div>
+        </div>
+        <div class="small-container  single-product">
+            <div class="row">
+                <div class="col-2">
+                    <img src="{{producto.imagen}}" width="200%" id="ProductImg">
+
+                    <div class="small-container">
+                        <div class="row row-2">
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-2">
+                    <h1>{{producto.nombre}}</h1>
+                    <h8>{{producto.caracteristicas}}</h8>
+                    <h4>{{producto.precio}}</h4>
+                    <select>
+                        <option >Selecionar Talla</option>
+                        <option >S</option>
+                        <option >XS</option>
+                        <option >M</option>
+                        <option >L</option>
+                    </select>
+                    <input type="number" value="1">
+
+                </div>
+                <div class="col-md-10 offset-md-4 my-auto">
+
+                    <form action="{{url_for('create_calificacion_super', id=producto.id)}}" method="POST">
+                        <p class="clasificacion">
+                            <input id="radio1" type="radio" name="cuanto" value="5">
+                            <label for="radio1">★</label>
+                            <input id="radio2" type="radio" name="cuanto" value="4">
+                            <label for="radio2">★</label>
+                            <input id="radio3" type="radio" name="cuanto" value="3">
+                            <label for="radio3">★</label>
+                            <input id="radio4" type="radio" name="cuanto" value="2">
+                            <label for="radio4">★</label>
+                            <input id="radio5" type="radio" name="cuanto" value="1">
+                            <label for="radio5">★</label>
+                        </p>
+                        <button type="submit" class="btn btn-primary btn-block">Guardar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+</body>
+
+</html>

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, ie=edge">
+    <title>Productos</title>
+    <script src="../js/script.js"></script>
+    <!-- BOOTSTRAP 4 -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.3.1/lux/bootstrap.min.css">
+    <!-- FONTS -->
+    <link href="https://fonts.googleapis.com/css?family=Lobster&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../static/styles/style_index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="header">
+
+
+        <!-- menu -->
+        <div class="container">
+            <div class="navbar">
+                <div class="logo">
+                    <img src="../../static/docs/logo.jpg" width="125px">
+                </div id="desplegable">
+                <nav>
+                    <ul>
+                        <ul id="menu">
+                            <li><a href="/menusuper">Menu</a></li>
+                            <li><a href="/">Administrar Usuarios</a></li>
+                            <li><a href="/">Administrar Productos</a>
+                                <li><a href="/logout">Cerrar Sesion</a></li>
+                                <li><a href="/contactssuper">Contactos</a></li>
+                                <li><a href="/preguntasssuper">Preguntas Frecuentes</a></li>
+
+                        </ul>
+
+
+                    </ul>
+                </nav>
+                <a href="https://mail.google.com/mail/u/0/"><img src="../../static/docs/cart.png" width="50px" height="50px"></a>
+
+
+            </div>
+
+        </div>
+        <!-- fin menu  -->
+
+        <!-- inicio categoria -->
+        <!-- fin categoria -->
+        <!-- descricion productos  -->
+        <!-- boton -->
+        <div class="buscar">
+            <input type="text" placeholder="Buscar">
+            <div class="boton">
+                <i class="fas fa-search"></i>
+            </div>
+        </div>
+        <div class="small-container  single-product">
+            <div class="row">
+                <div class="col-2">
+                    <img src="../../static/docs/gallery-1.jpg" width="100%" id="ProductImg">
+
+                    <div class="small-img-row">
+                        <div class="small-img-col">
+                            <img src="../../static/docs/gallery-1.jpg" width="100%" class="small-img">
+                        </div>
+                        <div class="small-img-col">
+                            <img src="../../static/docs/gallery-2.jpg" width="100%" class="small-img">
+                        </div>
+                        <div class="small-img-col">
+                            <img src="../../static/docs/gallery-3.jpg" width="100%" class="small-img">
+                        </div>
+                        <div class="small-img-col">
+                            <img src="../../static/docs/gallery-4.jpg" width="100%" class="small-img">
+                        </div>
+                    </div>
+
+                    <div class="small-container ">
+                        <div class="row row-2 ">
+                            <h2>Comentarios</h2>
+
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-2 ">
+                    <h1>Camisa Roja</h1>
+                    <h4>$32.000</h4>
+                    <select>
+                        <option >Selecionar Talla</option>
+                        <option >S</option>
+                        <option >XS</option>
+                        <option >M</option>
+                        <option >L</option>
+                    </select>
+                    <input type="number " value="1 ">
+                    <a href=" " class="btn "> Añadir al carrito</a>
+                </div>
+                <div class="col-md-10 offset-md-4 my-auto">
+
+                    <div class="card">
+                        <div class="card-header">
+
+                            <form action="/create_comentario_super" method="POST">
+                                <div class="form-group">
+                                    <input type="text" name="descripcion" placeholder="comentario" class="form-control" autofocus>
+                                </div>
+                                <button type="submit" class="btn btn-primary btn-block">Guarda</button>
+                            </form>
+                        </div>
+                        <div class="card-body">
+                            <ul class="list-group">
+                                {% for comentario in comentarios %}
+                                <li class="list-group-item">
+                                    <span class="{% if comentario.descripcion %} descripcion {% endif %}">{{comentario.descripcion}}</span>
+                                </li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="small-container ">
+            <h2>Otros Productos</h2>
+
+            <div class="row ">
+                <div class="col-4 ">
+                    <img src="../../static/docs/product-9.jpg ">
+                    <h4>Reloj De Pulso</h4>
+                    <p>$32.000</p>
+                </div>
+                <div class="col-4 ">
+                    <img src="../../static/docs/product-10.jpg ">
+                    <h4>Zapatos X </h4>
+                    <p>$100.000</p>
+                </div>
+                <div class="col-4 ">
+                    <img src="../../static/docs/product-11.jpg ">
+                    <h4>Zapatos Deportivos</h4>
+                    <p>$85.000</p>
+                </div>
+                <div class="col-4 ">
+                    <img src="../../static/docs/product-12.jpg ">
+                    <h4>Sudadera Negra </h4>
+                    <p>$45.000</p>
+                </div>
+            </div>
+        </div>
+
+
+</body>
+
+</html>

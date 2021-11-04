@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Productos</title>
+    <script src="../../static/js/script.js"></script>
+    <!-- BOOTSTRAP 4 -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.3.1/lux/bootstrap.min.css">
+    <!-- FONTS -->
+    <link href="https://fonts.googleapis.com/css?family=Lobster&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../static/styles/style_index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="header">
+        <!-- menu -->
+        <div class="container">
+            <div class="navbar">
+                <div class="logo">
+                    <img src="../../static/docs/logo.jpg" width="125px">
+                </div id="desplegable">
+                <nav>
+                    <ul>
+                        <ul id="menu">
+                            <li><a href="/menusuper">Menu</a></li>
+                            <li><a href="/">Administrar Usuarios</a></li>
+                            <li><a href="/">Administrar Productos</a>
+                                <li><a href="/logout">Cerrar Sesion</a></li>
+                                <li><a href="/contactssuper">Contactos</a></li>
+                                <li><a href="/preguntasssuper">Preguntas Frecuentes</a></li>
+                        </ul>
+                    </ul>
+                </nav>
+                <a href="https://mail.google.com/mail/u/0/"><img src="../../static/docs/cart.png" width="50px" height="50px"></a>
+            </div>
+        </div>
+        <!-- fin menu  -->
+
+        <!-- inicio categoria -->
+        <!-- fin categoria -->
+        <!-- descricion productos  -->
+        <!-- boton -->
+        <div class="buscar">
+            <input type="text" placeholder="Buscar">
+            <div class="boton">
+                <i class="fas fa-search"></i>
+            </div>
+        </div>
+        <div class="small-container  single-product">
+            <div class="row">
+                <div class="col-md-6 offset-md-4 my-auto">
+
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="card-body ">
+                                <h2>Usuarios</h2>
+                                <ul class="list-group ">
+                                    {% for usuario in usuarios %}
+                                    <li class="list-group-item ">
+                                        <span>{{usuario.id}}, {{usuario.nombre}}, {{usuario.apellido}}, {{usuario.correo}}, {{usuario.contrasena}}</span>
+                                        <a href="{{url_for('delete_usuario_super', id=usuario.id)}}" class="btn btn-danger btn-sm">Borrar</a>
+                                        <a href="{{url_for('agregar_persona')}}" class="btn btn-success btn-sm">Crear</a>
+                                    </li>
+                                    {% endfor %}
+                                </ul>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+</body>
+
+</html>

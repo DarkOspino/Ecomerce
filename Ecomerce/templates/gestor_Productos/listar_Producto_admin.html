@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Productos</title>
+    <script src="../../static/js/script.js"></script>
+    <!-- BOOTSTRAP 4 -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.3.1/lux/bootstrap.min.css">
+    <link rel="stylesheet" href="https://bootswatch.com/4/yeti/bootstrap.min.css">
+    <!-- FONTS -->
+    <link href="https://fonts.googleapis.com/css?family=Lobster&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../static/styles/style_index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+    <!-- FONT AWESOEM -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="header">
+        <!-- menu -->
+        <div class="container">
+            <div class="navbar">
+                <div class="logo">
+                    <img src="../../static/docs/logo.png" width="250px">
+                </div id="desplegable">
+                <nav>
+                    <ul>
+                        <ul id="menu">
+                            <li><a href="/menuadmin">Menu</a></li>
+                            <li><a href="/productsadmin">Explorar</a>
+                                <li><a href="/lista_personas_admin">Administrar Usuarios</a></li>
+                                <li><a href="/lista_productos_admin">Añadir Productos</a></li>
+                                <li><a href="/logout">Cerrar Sesion</a></li>
+                        </ul>
+                    </ul>
+                </nav>
+                <a href="/productsadmin"><img src="../../static/docs/cart.png" width="50px" height="50px"></a>
+            </div>
+        </div>
+        <!-- fin menu  -->
+
+        <!-- inicio categoria -->
+        <!-- fin categoria -->
+        <!-- descricion productos  -->
+        <!-- boton -->
+        <div class="buscar">
+            <input type="text" placeholder="Buscar">
+            <div class="boton">
+                <i class="fas fa-search"></i>
+            </div>
+        </div>
+        <div class="small-container  single-product">
+            <div class="row">
+                <div class="col-xs-4 offset-xs-4 my-auto">
+
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="card-body ">
+                                <h2>Usuarios</h2>
+                                <a href="{{url_for('agregar_producto_admin')}}" class="btn btn-success btn-sm">Crear</a>
+                                <ul class="list-group ">
+
+                                    <table class="table table-bordered">
+
+                                        <tr>
+
+                                            <th>ID</th>
+
+                                            <th>Nombre</th>
+
+                                            <th>Precio</th>
+
+                                            <th>Caracteristicas</th>
+
+                                            <th>Imagen</th>
+
+                                        </tr>
+
+                                        {% for producto in productos %}
+                                        <tr>
+
+                                            <td>{{producto.id}}</td>
+
+                                            <td>{{producto.nombre}}</td>
+
+                                            <td>{{producto.precio}}</td>
+
+                                            <td>{{producto.caracteristicas}}</td>
+
+                                            <td>{{producto.imagen}}</td>
+
+                                        </tr>
+                                        {% endfor %}
+                                    </table>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

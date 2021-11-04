@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Login Usuario</title>
+    <link rel="stylesheet" href="../../static/styles/style_index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="header">
+        <div class="container">
+            <div class="navbar">
+                <div class="logo">
+                    <img src="{{url_for('static', filename='docs/logo.jpg')}}" width="125px">
+                </div id="desplegable">
+                <nav>
+                    <ul>
+                        <ul id="menu">
+
+                            <li><a href="/menusuper">Menu</a></li>
+                            <li><a href="/productssuper">Explorar</a></li>
+                            <li><a href="/lista_personas">Administrar Usuarios</a></li>
+                            <li><a href="/lista_productos">Administrar Productos</a></li>
+                            <li><a href="/logout">Cerrar Sesion</a></li>
+                            <li><a href="/contactssuper">Contactos</a></li>
+                            <li><a href="/preguntassuper">Preguntas Frecuentes</a></li>
+
+                        </ul>
+
+
+                    </ul>
+                </nav>
+
+            </div>
+            {% if current_user.is_authenticated %} Hola {{ current_user.nombre }}! {% endif %}
+            <div class="row">
+                <div class="col-2">
+                    <h1>Consigue Lo Que Nececitas <br>A Un Click De Distancia</h1>
+                    <p>¿Hay algo que quieras consguir? <br>Este es el lugar adecuado para ti y por ti!</p>
+                    <a href="/productssuper" class="btn">Explorar &#9728;</a>
+                </div>
+                <div class="col-2">
+                    <img src="{{url_for('static', filename='docs/ecommerce-3021581_1280.jpg')}}">
+
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
